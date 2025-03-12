@@ -18,6 +18,18 @@ Elle offre des fonctionnalités pour **ajouter, modifier, consulter et supprimer
 - 🔹 **Consultation des rapports** selon les droits d’accès.
 - 🔹 **Sécurisation de l’API** avec JWT et rate-limiting.
 
+### 🔒 **Sécurité**
+L’API implémente plusieurs mécanismes pour garantir la protection des données et des accès :  
+
+- **🔐 Chiffrement des données sensibles** : Les informations personnelles sont chiffrées avant stockage.  
+- **🔑 Hashage des mots de passe** : Utilisation de `bcrypt` avec un sel sécurisé pour stocker les mots de passe de manière irréversible.  
+- **🛡️ Authentification sécurisée** :  
+  - Utilisation de **JWT (JSON Web Token)** pour gérer les sessions utilisateurs.  
+  - Expiration automatique des tokens après **1 heure**.  
+- **📊 Protection contre les attaques** :  
+  - `express-rate-limit` pour limiter les tentatives de connexion et éviter les attaques bruteforce.  
+  - `helmet` pour sécuriser les en-têtes HTTP contre les vulnérabilités (XSS, Clickjacking, etc.).  
+
 ## 🔧 Installation et Configuration
 ### 1️⃣ **Cloner le projet**
 ```bash
